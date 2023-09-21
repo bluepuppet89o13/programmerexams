@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ورودی آزمون</title>
+  <!-- Include the Persian font -->
+  <link rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v38.0.0/dist/font-face.css">
+  <style>
+    body {
+      background: radial-gradient(circle, #00ffdd 0%, #002fff 50%, #6200ff 100%);
+      color: #ffffff;
+      font-family: "Press Start 2P", cursive, "Vazir", sans-serif; /* Apply the Persian font */
+      margin: 0;
+      padding: 0;
+      animation: pulseBackground 10s infinite alternate; /* Animation for background color */
+    }
+
+    @keyframes pulseBackground {
+      0% {
+        background-color: #000;
+      }
+      100% {
+        background-color: #00294e; /* Slightly darker blue */
+      }
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: rgba(0, 0, 0, 0.7);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .survey-iframe {
+      margin: 20px 0;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .survey-iframe iframe {
+      border: none;
+      width: 100%;
+      height: 480px;
+      background-color: #333;
+      border-radius: 5px;
+    }
+
+    .survey-iframe:hover {
+      transform: scale(1.05);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    /* Customize the button style */
+    .custom-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #6f00ff; /* Neon Blue */
+      color: #ffffff;
+      font-size: 20px;
+      text-align: center;
+      text-decoration: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .custom-button:hover {
+      background-color: #2b007c; /* Darker Neon Blue on Hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>خوش اومدید</h1>
+    <p>لطفاً برای آزمون دادن آماده بشید و سپس روی دکمه آزمون مورد نظر کلیک کنید</p>
+
+    <div class="survey-iframe" onclick="loadSurvey('https://survey.porsline.ir/s/Pcqf5dwM')">
+      <div class="custom-button">آزمون سی شارپ</div>
+    </div>
+
+    <div class="survey-iframe" onclick="loadSurvey('https://survey.porsline.ir/s/n6BVq8Og')">
+      <div class="custom-button">آزمون سی پلاس پلاس</div>
+    </div>
+
+    <div class="survey-iframe" onclick="loadSurvey('https://survey.porsline.ir/s/WIKKA0j2')">
+      <div class="custom-button">آزمون پایتون</div>
+    </div>
+  </div>
+
+  <!-- JavaScript code to load surveys after clicking -->
+  <script>
+    function loadSurvey(surveyUrl) {
+      var iframe = document.createElement('iframe');
+      iframe.src = surveyUrl;
+      iframe.style.border = 'none';
+      iframe.style.width = '100%';
+      iframe.style.height = '480px';
+      iframe.style.backgroundColor = '#333';
+      iframe.style.borderRadius = '5px';
+
+      var surveyDiv = event.currentTarget;
+      surveyDiv.innerHTML = ''; // Clear the div's content
+      surveyDiv.appendChild(iframe);
+    }
+  </script>
+</body>
+</html>
