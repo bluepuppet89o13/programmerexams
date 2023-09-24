@@ -1,16 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ورودی آزمون</title>
+  <title>Gaming Surveys</title>
   <!-- Include the Persian font -->
   <link rel="stylesheet" href="https://cdn.rawgit.com/rastikerdar/vazir-font/v38.0.0/dist/font-face.css">
   <style>
-    body {
-      background: radial-gradient(circle, #000000 0%, #00146d 50%, #8840fa 100%);
-      color: #ffffff;
-      font-family: "Press Start 2P", cursive, "Vazir", sans-serif; /* Apply the Persian font */
+    body, html {
+      height: 100%;
       margin: 0;
       padding: 0;
+    }
+
+    body {
+      background: radial-gradient(circle, #000 0%, #2600ff 50%, #9900ff 100%);
+      color: #fff;
+      font-family: "Press Start 2P", cursive, "Vazir", sans-serif; /* Apply the Persian font */
       animation: pulseBackground 10s infinite alternate; /* Animation for background color */
     }
 
@@ -24,9 +28,11 @@
     }
 
     .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       background-color: rgba(0, 0, 0, 0.7);
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -36,11 +42,13 @@
       font-size: 36px;
       margin-bottom: 20px;
       text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      font-family: "Arial", sans-serif; /* Apply a different font for English text */
     }
 
     p {
       font-size: 18px;
       margin-bottom: 30px;
+      font-family: "Arial", sans-serif; /* Apply a different font for English text */
     }
 
     .survey-iframe {
@@ -52,7 +60,7 @@
     .survey-iframe iframe {
       border: none;
       width: 100%;
-      height: 480px;
+      height: 100%; /* Use 100% height for fullscreen */
       background-color: #333;
       border-radius: 5px;
     }
@@ -66,7 +74,7 @@
     .custom-button {
       display: inline-block;
       padding: 10px 20px;
-      background-color: #6f00ff; /* Neon Blue */
+      background-color: #8063ff; /* Neon Blue */
       color: #ffffff;
       font-size: 20px;
       text-align: center;
@@ -74,17 +82,33 @@
       border-radius: 5px;
       cursor: pointer;
       transition: background-color 0.3s;
+      font-family: "Arial", sans-serif; /* Apply a different font for English text */
     }
 
     .custom-button:hover {
-      background-color: #2b007c; /* Darker Neon Blue on Hover */
+      background-color: #4400ff; /* Darker Neon Blue on Hover */
+    }
+
+    /* Responsive styles for phones */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 24px;
+      }
+
+      p {
+        font-size: 16px;
+      }
+
+      .custom-button {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>خوش اومدید</h1>
-    <p>لطفاً برای آزمون دادن آماده بشید و سپس روی دکمه آزمون مورد نظر کلیک کنید</p>
+    <p>لطفاً برای آزمون دادن آماده باشید و سپس روی دکمه آزمون مورد نظر کلیک کنید</p>
 
     <div class="survey-iframe" onclick="loadSurvey('https://survey.porsline.ir/s/Pcqf5dwM')">
       <div class="custom-button">آزمون سی شارپ</div>
@@ -106,7 +130,7 @@
       iframe.src = surveyUrl;
       iframe.style.border = 'none';
       iframe.style.width = '100%';
-      iframe.style.height = '480px';
+      iframe.style.height = '100%';
       iframe.style.backgroundColor = '#333';
       iframe.style.borderRadius = '5px';
 
